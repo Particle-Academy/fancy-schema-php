@@ -15,6 +15,16 @@ namespace ParticleAcademy\FancySchema;
  * and a $ref cycle that consumes no input are each a {@see SchemaException},
  * collected across the whole schema, including $defs nothing references.
  *
+ * Scope is deliberately the 0.1 set approved in CC-fancy-0068: the keywords
+ * Prism's ACP schema uses, and $ref only to #/$defs/<name>. The shared
+ * fancy-schema corpus needs more (exclusiveMinimum, if, then, maxItems,
+ * minItems, minProperties, pattern, patternProperties, propertyNames, and refs
+ * that point inside a definition), so this class refuses it, and CorpusTest
+ * asserts that refusal. The owner chose to leave it there (q_f21e5d1f,
+ * 2026-11-25): widen the scope only when a consumer needs it, through the
+ * change council, adding each keyword with its evaluation, value check, ported
+ * cases and fail-closed cases together.
+ *
  * @internal
  */
 final class Compiler
