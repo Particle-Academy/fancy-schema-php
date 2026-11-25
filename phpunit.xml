@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache" failOnWarning="true" failOnRisky="true">
+    <testsuites><testsuite name="FancySchema"><directory>tests</directory></testsuite></testsuites>
+    <source><include><directory>src</directory></include></source>
+    <php>
+        <!-- The suite touches no database and no network, and it must never be
+             able to. Genie hands every process DB_CONNECTION=pgsql; both
+             <env force> and <server force> are set, as in every sibling. -->
+        <env name="DB_CONNECTION" value="sqlite" force="true"/>
+        <env name="DB_DATABASE" value=":memory:" force="true"/>
+        <server name="DB_CONNECTION" value="sqlite" force="true"/>
+        <server name="DB_DATABASE" value=":memory:" force="true"/>
+    </php>
+</phpunit>

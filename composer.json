@@ -1,0 +1,47 @@
+{
+    "name": "particle-academy/fancy-schema",
+    "description": "Zero-dependency, fail-closed JSON Schema 2020-12 validator for PHP, matching @particle-academy/fancy-schema. A keyword it does not implement, or a $ref it cannot resolve, throws instead of passing. Errors carry a JSON pointer and a stable code. Every limit configurable.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["json-schema", "validator", "draft-2020-12", "fail-closed", "zero-dependency", "fancy", "particle-academy"],
+    "homepage": "https://github.com/Particle-Academy/fancy-schema-php",
+    "support": {
+        "issues": "https://github.com/Particle-Academy/fancy-schema-php/issues",
+        "source": "https://github.com/Particle-Academy/fancy-schema-php"
+    },
+    "authors": [
+        {
+            "name": "Particle Academy",
+            "homepage": "https://github.com/Particle-Academy"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ParticleAcademy\\FancySchema\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ParticleAcademy\\FancySchema\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
