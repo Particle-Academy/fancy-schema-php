@@ -10,6 +10,8 @@ promising otherwise until 1.0.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-25
+
 ### Added
 
 - The package (CC-fancy-0068): a fail-closed JSON Schema 2020-12 validator, the
